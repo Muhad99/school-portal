@@ -1,0 +1,14 @@
+{% extends "admin_dashboard.html" %}
+{% block content %}
+    <h1>Data from MySQL Database</h1>
+    <table>
+        {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}

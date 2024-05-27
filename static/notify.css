@@ -1,0 +1,25 @@
+
+ 
+.container .dropdown button{
+    /* padding-left: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px; */
+    background-color:transparent;
+    color: #6f7180;
+    border: none;
+    font-size: 16px;
+}
+.container .dropdown button:hover{
+    color: #0dcaf0;
+}
+.container .dropdown ul{
+    /* background-color:transparent; */
+    background-color: white;
+}
+
+.container .dropdown ul li a:hover{
+    color: #0dcaf0;
+
+}
+

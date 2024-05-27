@@ -1,0 +1,9 @@
+table, th, tr {
+    border-collapse:collapse;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+form{
+    margin-left: 25%;
+    margin-top: 3%;
+}

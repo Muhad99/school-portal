@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/moon/css/form.css">
+</head>
+<body>
+    <div class="container">
+       <h1>REGISTER</h1>
+    <div class="form-box">
+    <form action="{{ url_for('reg') }}" method="post" autocomplete="off">
+<label for="id">ID</label>
+<input type="text" name="id" placeholder="Enter id" id="id">
+<br>
+<br>
+<label for="firstname">Firstname</label>
+<input type="text" name="firstname" placeholder="Firstname" id="firstname">
+<br>
+<br>
+<label for="lastname">Lastname</label>
+<input type="text" name="lastname" placeholder="Lastname" id="lastname">
+<br>
+<br>
+<label for="address">Address</label>
+<input type="text" name="address" placeholder="Address" id="address">
+<br>
+<br>
+<label for="mobile">Mobile</label>
+<input type="text" name="mobile" placeholder="Mobile" id="mobile">
+<br>
+<br>
+<label for="age">AGE</label>
+<input type="text" name="age" placeholder="Enter Age" id="age">
+<br>
+<br>
+<label for="email">Email</label>
+<input type="email" name="email" placeholder="Email" id="email">
+<br>
+<br>
+<label for="passord">Password</label>
+<input type="password" name="password" placeholder="Enter Password" id="password">
+<br>
+<br>
+
+<input type="submit" value="Register">
+    </form>
+    </div>
+    </div>
+</body>
+</html>
