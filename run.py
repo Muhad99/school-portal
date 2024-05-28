@@ -210,6 +210,46 @@ def user_register():
         msg = 'Please fill out the form!'
     return render_template('user_register.html', msg=msg)
 
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    msg = ''
+    if request.method == 'POST' and 'Fname' in request.form and 'Mname' in request.form and 'Lname' in request.form and 'Dob' in request.form and 'State' in request.form and 'Country' in request.form and 'Lga' in request.form and 'Address' in request.form and 'Guidenum' in request.form and 'Adminnum' in request.form and 'Email' in request.form and 'Password' in request.form and 'dropdown' in request.form :
+        Fname = request.form['Fname']
+        Mname = request.form['Mname']
+        Lname = request.form['Lname']
+        Dob = request.form['Dob']
+        State = request.form['State']
+        Country = request.form['Country']
+        Lga = request.form['Lga']
+        Address = request.form['Address']
+        Guidenum = request.form['Guidenum']
+        Adminnum = request.form['Adminnum']
+        Email = request.form['Email']
+        Password = request.form['Password']
+        dropdown = request.form['dropdown']
+        cursor = mysql.connection.cursor()
+        if dropdown == 'school1':
+            cursor.execute('INSERT INTO stujss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school2':
+            cursor.execute('INSERT INTO stujss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school3':
+            cursor.execute('INSERT INTO stujss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school4':
+            cursor.execute('INSERT INTO stuss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school5':
+            cursor.execute('INSERT INTO stuss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school6':
+            cursor.execute('INSERT INTO stuss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        mysql.connection.commit()
+        msg = 'You have successfully registered!'
+        return render_template('user_reg.html', msg=msg)
+    elif request.method == 'POST':
+        msg = 'Please fill out the form!'
+    return render_template('user_reg.html', msg=msg)
+
+
+
 @app.route("/logout")
 def logout():
     session.pop('loggedin', None)

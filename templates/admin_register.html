@@ -47,18 +47,66 @@
     <div class="register">
         <h1>Register</h1>
         <form action="{{ url_for('admin_register') }}" method="post" autocomplete="off">
-            <label for="Username">
+            <label for="Fname">
                 <i class="fa fa-user"></i>
             </label>
-            <input type="text" name="username" placeholder="Username" id="username" required>
-            <label for="Password">
-                <i class="fa fa-lock"></i>
+            <input type="text" name="Fname" placeholder="Fname" id="Fname" required>
+            <label for="Mname">
+                <i class="fa fa-user"></i>
             </label>
-            <input type="password" name="password" placeholder="Password" id="password" required>
+            <input type="text" name="Mname" placeholder="Mname" id="Mname" required>
+            <label for="Lname">
+                <i class="fa fa-user"></i>
+            </label>
+            <input type="text" name="Lname" placeholder="Lname" id="Lname" required>
+            <label for="Dob">
+                <i class="fa fa-calendar"></i>
+            </label>
+            <input type="date" name="Dob" placeholder="Dob" id="Dob" required>
+            <label for="State">
+                <i class="fa fa-globe"></i>
+            </label>
+            <input type="text" name="State" placeholder="State" id="State" required>
+            <label for="Country">
+                <i class="fa fa-globe"></i>
+            </label>
+            <input type="text" name="Country" placeholder="Country" id="Country" required>
+            <label for="Lga">
+                <i class="fa fa-globe"></i>
+            </label>
+            <input type="text" name="Lga" placeholder="Lga" id="Lga" required>
+            <label for="Address">
+                <i class="fa fa-globe"></i>
+            </label>
+            <input type="text" name="Address" placeholder="Address" id="Address" required>
+            <label for="Guidenum">
+                <i class="fa fa-phone-alt"></i>
+            </label>
+            <input type="text" name="Guidenum" placeholder="Guidenum" id="Guidenum" required>
+            <label for="Adminnum">
+                <i class="fa fa-user"></i>
+            </label>
+            <input type="text" name="Adminnum" placeholder="Adminnum" id="Adminnum" required>
             <label for="Email">
-                <i class="fa fa-envelope-open"></i>
+                <i class="fa fa-envelope"></i>
             </label>
-            <input type="email" name="email" placeholder="Email" id="email" required>
+            <input type="email" name="Email" placeholder="Email" id="Email" required>
+            <label for="Password">
+                <i class="fa fa-user"></i>
+            </label>
+            <input type="password" name="Password" placeholder="Password" id="Password" required>
+            <label for="Class">
+                <i class="fa fa-users"></i>
+            </label>
+            <select name="classs" id="classs" placeholder="Select class">
+                <option class="classchose" value="">Choose Class</option>
+                <option value="stujss1">JSS1</option>
+                <option value="stujss2">JSS2</option>
+                <option value="stujss3">JSS3</option>
+                <option value="stuss1">SS1</option>
+                <option value="stuss2">SS2</option>
+                <option value="stuss3">SS3</option>
+            </select>
             <p style="text-align: center;">Already have an account?<a href="{{ url_for('login') }}"> Login</a></p>
             <div class="msg">{{ msg }}</div>
             <button type="submit" id="demo">Submit</button>
