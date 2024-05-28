@@ -7,9 +7,6 @@ from datetime import datetime
 import os 
 
 
-
-
-
 app = Flask(__name__)
 
 app.secret_key = 'key'
@@ -20,24 +17,10 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'portal'
 
-# app.config['UPLOADED_PHOTOS_DEST'] = 'static/profile_pictures'
-# photos = UploadSet('photos', extensions=['jpg', 'png', 'jpeg'])
-# configure_uploads(app, photos)
-
-
-# db = MySQL(app)
+ 
 mysql = MySQL(app)
 
-# class User(db.Model):
-# 	id = db.Column(db.Integer, primary_key=True)
-# 	username = db.Column(db.String(64), unique=True, nullable=False)
-# 	email = db.Column(db.String(120), unique=True, nullable=False)
-# 	profile_picture = db.Column(db.String(120), nullable=True)
-
-# 	def __repr__(self):
-#             return f'<User {self.username}>'
-
-
+ 
 
 @app.route("/")
 def index():
@@ -353,19 +336,6 @@ def upload_file():
     cursor.execute('INSERT INTO files (name, data) VALUES(%s, %s)',(file.filename, file.read()))
     mysql.connection.commit()
     return '<h1> File uploaded successfully<h1>'
-
-# @app.route('/update_profile_picture', methods=['POST'])
-# def update_profile_picture():
-# 	profile_picture = request.files['profile_picture']
-# 	profile_picture.save(photos.path('profile_picture.jpg'))
-	
-# 	user = user.query.get((1))
-# 	user.profile_picture = 'profile_picture.jpg'
-# 	db.session.commit()
-	
-# 	return 'Profile picture updated successfully!', 200
-
-
 
 
 if __name__ == '__main__':
