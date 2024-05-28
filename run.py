@@ -94,21 +94,21 @@ def notify():
     return render_template('notify.html')
      
  
-@app.route('/register/admin', methods=['GET', 'POST'])
-def admin_register():
-    msg = ''
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
-        username = request.form['username']
-        password = request.form['password']
-        email = request.form['email']
-        cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO reg VALUES (NULL, %s, %s, %s)', (username, password, email))
-        mysql.connection.commit()
-        msg = 'You have successfully registered!'
-        return render_template('login.html', msg=msg)
-    elif request.method == 'POST':
-        msg = 'Please fill out the form!'
-    return render_template('admin_register.html', msg=msg)
+# @app.route('/register/admin', methods=['GET', 'POST'])
+# def admin_register():
+#     msg = ''
+#     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
+#         username = request.form['username']
+#         password = request.form['password']
+#         email = request.form['email']
+#         cursor = mysql.connection.cursor()
+#         cursor.execute('INSERT INTO reg VALUES (NULL, %s, %s, %s)', (username, password, email))
+#         mysql.connection.commit()
+#         msg = 'You have successfully registered!'
+#         return render_template('login.html', msg=msg)
+#     elif request.method == 'POST':
+#         msg = 'Please fill out the form!'
+#     return render_template('admin_register.html', msg=msg)
 
 
 
@@ -211,10 +211,10 @@ def user_register():
     return render_template('user_register.html', msg=msg)
 
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
+@app.route('/register/admin', methods=['GET', 'POST'])
+def admin_register():
     msg = ''
-    if request.method == 'POST' and 'Fname' in request.form and 'Mname' in request.form and 'Lname' in request.form and 'Dob' in request.form and 'State' in request.form and 'Country' in request.form and 'Lga' in request.form and 'Address' in request.form and 'Guidenum' in request.form and 'Adminnum' in request.form and 'Email' in request.form and 'Password' in request.form and 'dropdown' in request.form :
+    if request.method == 'POST' and 'Fname' in request.form and 'Mname' in request.form and 'Lname' in request.form and 'Dob' in request.form and 'State' in request.form and 'Country' in request.form and 'Lga' in request.form and 'Address' in request.form and 'Guidenum' in request.form and 'Adminnum' in request.form and 'Email' in request.form and 'Password' in request.form and 'dropdown' in request.form:
         Fname = request.form['Fname']
         Mname = request.form['Mname']
         Lname = request.form['Lname']
@@ -229,24 +229,24 @@ def register():
         Password = request.form['Password']
         dropdown = request.form['dropdown']
         cursor = mysql.connection.cursor()
-        if dropdown == 'stujss1':
-            cursor.execute('INSERT INTO stujss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'stujss2':
-            cursor.execute('INSERT INTO stujss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'stujss3':
-            cursor.execute('INSERT INTO stujss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'stuss1':
-            cursor.execute('INSERT INTO stuss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'stuss2':
-            cursor.execute('INSERT INTO stuss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'stuss3':
-            cursor.execute('INSERT INTO stuss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        if dropdown == 'school1':
+            cursor.execute('INSERT INTO stujss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school2':
+            cursor.execute('INSERT INTO stujss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school3':
+            cursor.execute('INSERT INTO stujss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school4':
+            cursor.execute('INSERT INTO stuss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school5':
+            cursor.execute('INSERT INTO stuss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+        elif dropdown == 'school6':
+            cursor.execute('INSERT INTO stuss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
-        return render_template('user_reg.html', msg=msg)
+        return render_template('login.html', msg=msg)
     elif request.method == 'POST':
         msg = 'Please fill out the form!'
-    return render_template('user_reg.html', msg=msg)
+    return render_template('admin_register.html', msg=msg)
 
 
 
