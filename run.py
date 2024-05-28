@@ -229,17 +229,17 @@ def register():
         Password = request.form['Password']
         dropdown = request.form['dropdown']
         cursor = mysql.connection.cursor()
-        if dropdown == 'school1':
+        if dropdown == 'stujss1':
             cursor.execute('INSERT INTO stujss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'school2':
+        elif dropdown == 'stujss2':
             cursor.execute('INSERT INTO stujss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'school3':
+        elif dropdown == 'stujss3':
             cursor.execute('INSERT INTO stujss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'school4':
+        elif dropdown == 'stuss1':
             cursor.execute('INSERT INTO stuss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'school5':
+        elif dropdown == 'stuss2':
             cursor.execute('INSERT INTO stuss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
-        elif dropdown == 'school6':
+        elif dropdown == 'stuss3':
             cursor.execute('INSERT INTO stuss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
