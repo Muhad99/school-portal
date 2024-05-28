@@ -230,17 +230,17 @@ def admin_register():
         dropdown = request.form['dropdown']
         cursor = mysql.connection.cursor()
         if dropdown == 'school1':
-            cursor.execute('INSERT INTO stujss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+            cursor.execute('INSERT INTO stujss1 VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
         elif dropdown == 'school2':
-            cursor.execute('INSERT INTO stujss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+            cursor.execute('INSERT INTO stujss2 VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
         elif dropdown == 'school3':
-            cursor.execute('INSERT INTO stujss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+            cursor.execute('INSERT INTO stujss3 VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
         elif dropdown == 'school4':
-            cursor.execute('INSERT INTO stuss1 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+            cursor.execute('INSERT INTO stuss1 VALUES (NULL,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
         elif dropdown == 'school5':
-            cursor.execute('INSERT INTO stuss2 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+            cursor.execute('INSERT INTO stuss2 VALUES (NULL,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
         elif dropdown == 'school6':
-            cursor.execute('INSERT INTO stuss3 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
+            cursor.execute('INSERT INTO stuss3 VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (Fname, Mname, Lname, Dob, State, Country, Lga, Address, Guidenum, Adminnum, Email, Password))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
         return render_template('login.html', msg=msg)

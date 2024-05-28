@@ -46,7 +46,7 @@
     <!-- Register Start -->
     <div class="register">
         <h1>Register</h1>
-        <form action="{{ url_for('admin_register') }}" method="post" autocomplete="off">
+        <form action="{{ url_for('admin_register') }}" method="POST" autocomplete="off">
             <label for="Fname">
                 <i class="fa fa-user"></i>
             </label>
@@ -98,7 +98,7 @@
             <label for="Class">
                 <i class="fa fa-users"></i>
             </label>
-            <select name="classs" id="classs" placeholder="Select class">
+            <select name="dropdown" id="dropdown" placeholder="Select class">
                 <option class="classchose" value="">Choose Class</option>
                 <option value="school1">JSS1</option>
                 <option value="school2">JSS2</option>
