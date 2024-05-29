@@ -93,24 +93,6 @@ def attend():
 def notify():
     return render_template('notify.html')
      
- 
-# @app.route('/register/admin', methods=['GET', 'POST'])
-# def admin_register():
-#     msg = ''
-#     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
-#         username = request.form['username']
-#         password = request.form['password']
-#         email = request.form['email']
-#         cursor = mysql.connection.cursor()
-#         cursor.execute('INSERT INTO reg VALUES (NULL, %s, %s, %s)', (username, password, email))
-#         mysql.connection.commit()
-#         msg = 'You have successfully registered!'
-#         return render_template('login.html', msg=msg)
-#     elif request.method == 'POST':
-#         msg = 'Please fill out the form!'
-#     return render_template('admin_register.html', msg=msg)
-
-
 
 @app.route('/admin/login', methods=['GET', 'POST'])
 def admin_login():
